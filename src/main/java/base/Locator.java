@@ -44,12 +44,13 @@ public class Locator {
 
 		// css sekector
 		driver.findElement(By.className("go-to-login-btn")).click();
-
+		// Parent child travers
+		// driver.findElement(By.xpath("//div[@class='forgot-pwd-btn-conainer']/button[1]")).click();
 		// id locator
 		driver.findElement(By.id("inputUsername")).sendKeys("Gopirkishnan");
 		// CSS regular expression - with partial text
 		driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");
-		Thread.sleep(2000);// to avoid intercept error for below line
+		Thread.sleep(1000);// to avoid intercept error for below line
 		driver.findElement(By.xpath("//input[@id='chkboxOne']")).click();
 		// xpath regular expression
 		driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click();
