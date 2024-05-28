@@ -16,10 +16,12 @@ public class DropDown {
 		WebElement staticDropodownCurrency = driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
 		Select select = new Select(staticDropodownCurrency);
 		select.selectByIndex(3);// selecting USD from Dropdown
-		String selectedCurrencyName=select.getFirstSelectedOption().getText();
+		String selectedCurrencyName=select.getFirstSelectedOption().getText();// check the selected option
 		System.out.println(selectedCurrencyName);
+		select.selectByVisibleText("AED"); // SELECT BY VISIBLE TEXT
+		select.selectByValue("INR");// SELECT BY VALUE
 		
-		driver.close();
+		//driver.close();
 
 	}
 
