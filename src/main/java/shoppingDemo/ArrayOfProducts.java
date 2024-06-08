@@ -12,13 +12,22 @@ public class ArrayOfProducts {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		int count =0;
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 		Thread.sleep(2000);
-
-		// Array decleration for adding multiple products in to ADD TO CART
 		String[] productsName = { "Brocolli", "Cucumber" };
+		addItems(driver, productsName);
+		driver.findElement(By.xpath("//a[@class='cart-icon']")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]")).click();
+		driver.findElement(By.xpath("//input[@class='promoCode']")).sendKeys("rahulshetteyacademy");
+		
+		
+	}
+
+	public static void addItems(WebDriver driver, String[] productsName) {
+		// Array decleration for adding multiple products in to ADD TO CART
+
+		int count = 0;
 
 		List<WebElement> products = driver.findElements(By.cssSelector("h4.product-name"));
 
@@ -33,13 +42,14 @@ public class ArrayOfProducts {
 
 			// convert array to arraylist for easy operation
 			List arrayList = Arrays.asList(productsName);
-				
+
 			if (arrayList.contains(formattedName)) {
 				count++;
 				// click on add to cart option
 				// here also need findElements
-				driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
-				if(count ==2) { // for stopping the iteration after 2, because in the Array we are checking 2 items
+				driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
+				if (count == productsName.length) { // for stopping the iteration after 2, because in the Array we are
+													// checking 2 items
 					break;
 				}
 			}
