@@ -15,7 +15,7 @@ public class CountOfAttributes {
 		// particular section link count
 		System.out.println(driver.findElements(By.xpath("//div[@id='gf-BIG']//a")).size());
 		
-		// Apt way
+		// Apt way - by creating section driver for particular
 		 WebElement footerDriver = driver.findElement(By.id("gf-BIG"));
 		 System.out.println(footerDriver.findElements(By.tagName("a")).size());
 		

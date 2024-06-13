@@ -26,10 +26,5 @@ public class WindowSwitch {
 		System.out.println(emialIdExtract);
 		driver.switchTo().window(parentWindow);
 		driver.findElement(By.id("username")).sendKeys(emialIdExtract);
-		
-		
-	
-		
-
 }
 }

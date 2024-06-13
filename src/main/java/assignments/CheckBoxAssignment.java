@@ -1,4 +1,4 @@
-package base;
+package assignments;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 

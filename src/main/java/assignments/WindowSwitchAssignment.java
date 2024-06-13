@@ -1,4 +1,4 @@
-package windowswitch;
+package assignments;
 
 import java.time.Duration;
 import java.util.Iterator;
